@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:suggest/Animation/FadeAnimation.dart';
 import 'package:suggest/homepage.dart';
+import 'package:suggest/homepage1.dart';
 import 'package:suggest/sign_up.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -280,7 +281,7 @@ class _UserSignInState extends State<UserSignIn> {
                                           context,
                                           MaterialPageRoute(
                                               builder: ((context) =>
-                                                  Homepage())));
+                                                  Homepageot())));
                                     }).onError((error, stackTrace) {
                                       print("\nError ${error.toString()}");
                                     });

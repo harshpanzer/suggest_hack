@@ -34,3 +34,19 @@ class UserModel {
     };
   }
 }
+
+stocks() {
+  var stockk = [
+    "ODFL",
+    "TSLA",
+    "GOOG",
+    "ADE",
+    "AAL",
+    "AAPL",
+    "INVH",
+    "IFF",
+    "PKI",
+    "CSX"
+  ];
+  return stockk;
+}

@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:suggest/function.dart';
-import 'package:suggest/stocklist.dart';
+import 'package:suggest/stock.dart';
+import 'package:suggest/tangible.dart';
 
 class Homepageot extends StatefulWidget {
   const Homepageot({super.key});
@@ -23,31 +24,110 @@ class _HomepageotState extends State<Homepageot> {
       body: Container(
         child: Column(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => StockList())));
-              },
-              child: Container(
-                padding: EdgeInsets.only(left: 50),
-                height: 200,
-                width: 300,
-                child: Image.asset(
-                  'assets/images/stock.jpeg',
-                  fit: BoxFit.fill,
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Tangible()));
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/stock.jpeg',
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Suggest',
-                style: TextStyle(
-                    fontSize: 30, color: Color.fromARGB(255, 255, 255, 255)),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Tangible Assets',
+              style: TextStyle(
+                  fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Stock()));
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/stock.jpeg',
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Stocks',
+              style: TextStyle(
+                  fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Stock()));
+                    // _showToast(context);
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/stock.jpeg',
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Crypto',
+              style: TextStyle(
+                  fontSize: 20, color: Color.fromARGB(255, 255, 255, 255)),
             )
           ],
         ),
+      ),
+    );
+  }
+
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: const Text('Data Fetched Successfully'),
+        action: SnackBarAction(
+            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }

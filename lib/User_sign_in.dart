@@ -185,6 +185,23 @@ class _UserSignInState extends State<UserSignIn> {
                                     ),
                                   ),
                                   Container(
+                                    child: TextFormField(
+                                      controller: usernametextconroller,
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: "Name",
+                                          hintStyle: TextStyle(
+                                              color: Colors.grey[400])),
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return 'Enter Your Name';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                  Container(
                                     padding: EdgeInsets.all(8.0),
                                     decoration: BoxDecoration(
                                         border: Border(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:suggest/Animation/FadeAnimation.dart';
 import 'package:suggest/User_sign_in.dart';
 import 'package:suggest/homepage.dart';
+import 'package:suggest/homepage1.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -157,7 +158,7 @@ class _SignUpState extends State<SignUp> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: ((context) => Homepage())));
+                                      builder: ((context) => Homepageot())));
                             }).onError((error, stackTrace) {
                               print("error ${error.toString()}");
                             });
